@@ -34,7 +34,7 @@
 
 .comb span.firefox {
 	left: 0;
-    position: absolute;
+    /* position: absolute; */
     top: 20px;
     z-index: -1;
 }
