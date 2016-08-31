@@ -452,121 +452,133 @@
 				<!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+			
+			<div class="row">
+				<div class="col-lg-12">
+					<h3>Luonne</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum leo vitae consectetur aliquam. Praesent pretium blandit iaculis. Phasellus ut augue vestibulum, feugiat ex vitae, porta nisl. Nunc maximus mauris at justo rhoncus venenatis. Mauris dapibus eleifend massa, sed blandit felis semper non. Nullam vel ex sit amet sapien tincidunt tempus. Fusce a accumsan justo, id luctus ante. 
+					Ut semper finibus quam, non hendrerit leo semper sit amet. Sed dictum dui vitae mollis malesuada. Quisque non dolor ex. Donec rutrum risus vel nisl tincidunt, eget malesuada neque tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris congue commodo felis, ut volutpat leo imperdiet at. Praesent vestibulum finibus nisl, vitae malesuada ipsum.</p>
+				</div>
+			</div> <!-- /.row -->
+			
+			<h3>Suku</h3>
 			<div class="row">
 			<!--
 			We will create a family tree using just CSS(3)
 			The markup will be simple nested lists
 			-->
 			
-			<style>
-				/*Now the CSS*/
-				* {margin: 0; padding: 0;}
+				<style>
+					/*Now the CSS*/
+					* {margin: 0; padding: 0;}
 
-				.tree ul {
-					padding-top: 20px; position: relative;
-					
-					transition: all 0.5s;
-					-webkit-transition: all 0.5s;
-					-moz-transition: all 0.5s;
-				}
+					.tree ul {
+						padding-top: 20px; position: relative;
+						
+						transition: all 0.5s;
+						-webkit-transition: all 0.5s;
+						-moz-transition: all 0.5s;
+					}
 
-				.tree li {
-					float: left; text-align: center;
-					list-style-type: none;
-					position: relative;
-					padding: 20px 7px 0 7px;
-					
-					transition: all 0.5s;
-					-webkit-transition: all 0.5s;
-					-moz-transition: all 0.5s;
-				}
+					.tree li {
+						float: left; text-align: center;
+						list-style-type: none;
+						position: relative;
+						padding: 20px 7px 0 7px;
+						
+						transition: all 0.5s;
+						-webkit-transition: all 0.5s;
+						-moz-transition: all 0.5s;
+					}
 
-				/*We will use ::before and ::after to draw the connectors*/
+					/*We will use ::before and ::after to draw the connectors*/
 
-				.tree li::before, .tree li::after{
-					content: '';
-					position: absolute; top: 0; right: 50%;
-					border-top: 1px solid #ccc;
-					width: 50%; height: 20px;
-				}
-				.tree li::after{
-					right: auto; left: 50%;
-					border-left: 1px solid #ccc;
-				}
+					.tree li::before, .tree li::after{
+						content: '';
+						position: absolute; top: 0; right: 50%;
+						border-top: 1px solid #ccc;
+						width: 50%; height: 20px;
+					}
+					.tree li::after{
+						right: auto; left: 50%;
+						border-left: 1px solid #ccc;
+					}
 
-				/*We need to remove left-right connectors from elements without 
-				any siblings*/
-				.tree li:only-child::after, .tree li:only-child::before {
-					display: none;
-				}
+					/*We need to remove left-right connectors from elements without 
+					any siblings*/
+					.tree li:only-child::after, .tree li:only-child::before {
+						display: none;
+					}
 
-				/*Remove space from the top of single children*/
-				.tree li:only-child{ padding-top: 0;}
+					/*Remove space from the top of single children*/
+					.tree li:only-child{ padding-top: 0;}
 
-				/*Remove left connector from first child and 
-				right connector from last child*/
-				.tree li:first-child::before, .tree li:last-child::after{
-					border: 0 none;
-				}
-				/*Adding back the vertical connector to the last nodes*/
-				.tree li:last-child::before{
-					border-right: 1px solid #ccc;
-					border-radius: 0 5px 0 0;
-					-webkit-border-radius: 0 5px 0 0;
-					-moz-border-radius: 0 5px 0 0;
-				}
-				.tree li:first-child::after{
-					border-radius: 5px 0 0 0;
-					-webkit-border-radius: 5px 0 0 0;
-					-moz-border-radius: 5px 0 0 0;
-				}
+					/*Remove left connector from first child and 
+					right connector from last child*/
+					.tree li:first-child::before, .tree li:last-child::after{
+						border: 0 none;
+					}
+					/*Adding back the vertical connector to the last nodes*/
+					.tree li:last-child::before{
+						border-right: 1px solid #ccc;
+						border-radius: 0 5px 0 0;
+						-webkit-border-radius: 0 5px 0 0;
+						-moz-border-radius: 0 5px 0 0;
+					}
+					.tree li:first-child::after{
+						border-radius: 5px 0 0 0;
+						-webkit-border-radius: 5px 0 0 0;
+						-moz-border-radius: 5px 0 0 0;
+					}
 
-				/*Time to add downward connectors from parents*/
-				.tree ul ul::before{
-					content: '';
-					position: absolute; top: 0; left: 50%;
-					border-left: 1px solid #ccc;
-					width: 0; height: 20px;
-				}
+					/*Time to add downward connectors from parents*/
+					.tree ul ul::before{
+						content: '';
+						position: absolute; top: 0; left: 50%;
+						border-left: 1px solid #ccc;
+						width: 0; height: 20px;
+					}
 
-				.tree li a{
-					border: 1px solid #ccc;
-					padding: 5px 10px;
-					text-decoration: none;
-					color: #666;
-					font-family: arial, verdana, tahoma;
-					font-size: 11px;
-					display: inline-block;
-					
-					border-radius: 5px;
-					-webkit-border-radius: 5px;
-					-moz-border-radius: 5px;
-					
-					transition: all 0.5s;
-					-webkit-transition: all 0.5s;
-					-moz-transition: all 0.5s;
-				}
+					.tree li a{
+						border: 1px solid #ccc;
+						padding: 5px 10px;
+						text-decoration: none;
+						color: #666;
+						font-family: arial, verdana, tahoma;
+						font-size: 11px;
+						display: inline-block;
+						
+						border-radius: 5px;
+						-webkit-border-radius: 5px;
+						-moz-border-radius: 5px;
+						
+						transition: all 0.5s;
+						-webkit-transition: all 0.5s;
+						-moz-transition: all 0.5s;
+					}
 
-				/*Time for some hover effects*/
-				/*We will apply the hover effect the the lineage of the element also*/
-				.tree li a:hover, .tree li a:hover+ul li a {
-					background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
-				}
-				/*Connector styles on hover*/
-				.tree li a:hover+ul li::after, 
-				.tree li a:hover+ul li::before, 
-				.tree li a:hover+ul::before, 
-				.tree li a:hover+ul ul::before{
-					border-color:  #94a0b4;
-				}
+					/*Time for some hover effects*/
+					/*We will apply the hover effect the the lineage of the element also*/
+					.tree li a:hover, .tree li a:hover+ul li a {
+						background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+					}
+					/*Connector styles on hover*/
+					.tree li a:hover+ul li::after, 
+					.tree li a:hover+ul li::before, 
+					.tree li a:hover+ul::before, 
+					.tree li a:hover+ul ul::before{
+						border-color:  #94a0b4;
+					}
 
-				/*Thats all. I hope you enjoyed it.
-				Thanks :)*/
-							
-			</style>
+					/*Thats all. I hope you enjoyed it.
+					Thanks :)*/
+								
+				</style>
 			
 			
 				<div class="tree col-lg-6 col-lg-offset-2">
+				
+				
 					<ul>
 						<li class="gen10">
 							<a href="#">Lorem Ipsum</a>
@@ -589,7 +601,241 @@
 						</li>
 					</ul>
 				</div>
+			</div> <!-- /row -->
+			
+			
+			<h3>Statistiikka</h3>
+			<div class="row">	
+				<div class="col-lg-8">
+				<h4>Competitions</h4>
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Date</th>
+									<th>Type</th>
+									<th>Class</th>
+									<th>Organizer</th>
+									<th>Results</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>01.01.2016</td>
+									<td>Dressage</td>
+									<td>He A</td>
+									<td>Talli</td>
+									<td>10/100</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>01.01.2016</td>
+									<td>Dressage</td>
+									<td>He A</td>
+									<td>Talli</td>
+									<td>10/100</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>01.01.2016</td>
+									<td>Dressage</td>
+									<td>He A</td>
+									<td>Talli</td>
+									<td>10/100</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<h4>Summary</h4>
+					<dl class="dl-horizontal">
+						<dt>Entries (all):</dt>
+						<dd>1000</dd>
+						
+						<dt>Winnings:</dt>
+						<dd>57</dd>
+						
+						<dt>Ranks:</dt>
+						<dd>351</dd>
+						
+						<dt>W%</dt>
+						<dd>0,57</dd>
+						
+						<dt>R%</dt>
+						<dd>35,10</dd>
+					</dl>
+				</div>
 			</div>
+			<div class="row">
+			
+				<div class="col-lg-4">
+					<h4>Rakenne</h4>
+					
+					<h5>Head</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+						<span class="sr-only">80% Complete (success)</span> 80%
+					  </div>
+					</div>
+					
+					<h5>Neck</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+						<span class="sr-only">75% Complete (success)</span> 75%
+					  </div>
+					</div>
+					
+					<h5>Withers</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" style="width: 82%">
+						<span class="sr-only">82% Complete (success)</span> 82%
+					  </div>
+					</div>
+					
+					<h5>Back</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+						<span class="sr-only">65% Complete (success)</span> 65%
+					  </div>
+					</div>
+					
+					<h5>Shoulders</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
+						<span class="sr-only">78% Complete (success)</span> 78%
+					  </div>
+					</div>
+					
+					<h5>Legs</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+						<span class="sr-only">40% Complete (success)</span> 40%
+					  </div>
+					</div>
+					
+					<h5>Hooves</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+						<span class="sr-only">20% Complete (success)</span> 20%
+					  </div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="col-lg-4">
+					<h4>Luonne</h4>
+					
+					<h5>Obedience</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+						<span class="sr-only">90% Complete (success)</span> 90%
+					  </div>
+					</div>
+					
+					<h5>Nerves</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+						<span class="sr-only">85% Complete (success)</span> 85%
+					  </div>
+					</div>
+					
+					<h5>Maneuverability</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+						<span class="sr-only">50% Complete (success)</span> 50%
+					  </div>
+					</div>
+					
+					<h5>Curiosity</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+						<span class="sr-only">10% Complete (success)</span> 10%
+					  </div>
+					</div>
+					
+					<h5>Humor</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+						<span class="sr-only">50% Complete (success)</span> 50%
+					  </div>
+					</div>
+					
+					<h5>Patience</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+						<span class="sr-only">75% Complete (success)</span> 75%
+					  </div>
+					</div>
+					
+					<h5>Endurance</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+						<span class="sr-only">80% Complete (success)</span> 80%
+					  </div>
+					</div>
+					
+					<h5>Agility</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width: 81%">
+						<span class="sr-only">81% Complete (success)</span> 81%
+					  </div>
+					</div>
+					
+					<h5>Speed</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%">
+						<span class="sr-only">98% Complete (success)</span> 98%
+					  </div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<h4>Askellajit</h4>
+					
+					<h5>Walk</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" style="width: 96%">
+						<span class="sr-only">96% Complete (success)</span> 96%
+					  </div>
+					</div>
+					
+					<h5>Trot</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+						<span class="sr-only">20% Complete (success)</span> 20%
+					  </div>
+					</div>
+					
+					<h5>Gallop</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+						<span class="sr-only">40% Complete (success)</span> 40%
+					  </div>
+					</div>
+					
+					<h5>Pace</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+						<span class="sr-only">0% Complete (success)</span> -
+					  </div>
+					</div>
+					
+					<h5>Ambling gaits</h5>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+						<span class="sr-only">0% Complete (success)</span> -
+					  </div>
+					</div>
+				</div>	
+				
+			</div> <!-- /row -->
+			
+			
         </div>
         <!-- /#page-wrapper -->
 
